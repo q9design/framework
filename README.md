@@ -1,2 +1,2 @@
 # framework
-Web App Framework Components -- Mix and match to create your webapp.
+Web Application Framework Components -- Mix and match to create your webapp.
