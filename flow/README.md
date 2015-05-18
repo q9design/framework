@@ -2,7 +2,7 @@
 
 # define live data relationships
 
-```
+```javascript
 import flow from 'flow.js'
  
 var a = {a:1,b:2}
