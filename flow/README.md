@@ -9,7 +9,6 @@ var a = {a:1,b:2}
 var b = {x:3,y:4}
  
 flow(a,'a').to(b,'x')
-a.a = 10
+a.a = 10  // b.x is now 10 also
 
-flow(a,'b').as('e').to(b)  // change default name
 ```
