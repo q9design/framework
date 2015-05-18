@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+		<title>flow-lab</title>
+		<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+		<style>
+			html {height: 100%; overflow: hidden;}
+			body {height: 100%; margin: 0; padding: 0; font: normal 16px arial;}
+			:unresolved {border: solid 1px pink;}
+		</style>
+
+		<script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    		<script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+	</head>
+	<body>
+		<script type='module'>
+			import flow from 'flow.js'
+			
+			var a = {a:1,b:2}
+			var b = {c:3,d:4}
+			var c = {e:5,f:6}
+
+			flow(a,'a').to(b).as('z').to(function(v){return 'fixed'}).to(c)
+
+			//flow(a,'a').between(b,'x')
+
+			flow(a,'b').to(function(v){
+				return v+"xyz'"
+				}).to(b,'d')
+
+			a.a = 10
+			//b.c = 3.3
+			console.log('ab',a,b,c)
+			setTimeout(n=>console.log('nab',a,b,c)) // flux happens 'in between the cracks'.
+		</script>
+	</body>
+</html>
